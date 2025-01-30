@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Created Recipes</title>
+  <link rel="stylesheet" href="/css/createdrecipes.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="page-title">My Created Recipes</h1>
+
+  <div th:if="${recipes.isEmpty()}" class="no-recipes">
+    <p>You haven't created any recipes yet.</p>
+  </div>
+
+  <div th:if="${not recipes.isEmpty()}">
+    <div class="recipe-grid">
+      <ul>
+        <li th:each="recipe : ${recipes}" class="recipe-item">
+          <div class="recipe-card">
+            <h2 class="recipe-title" th:text="${recipe.title}">Recipe Title</h2>
+            <p class="recipe-description"><strong>Description:</strong> <span th:text="${recipe.description}">Description</span></p>
+            <p class="recipe-ingredients"><strong>Ingredients:</strong> <span th:text="${recipe.ingredients}">Ingredients</span></p>
+            <p class="recipe-author"><strong>Author:</strong> <span th:text="${recipe.author.username}">Author</span></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

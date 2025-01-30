@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <div class="header">
+        <h2>Welcome back, <span th:text="${username}">User</span>!</h2>
+    </div>
+
+    <div class="button-container">
+        <a href="/add-recipe" class="dashboard-button">Add Recipe</a>
+        <a href="/discover-recipes" class="dashboard-button">Discover New Recipes</a>
+        <a href="/discover-recipes" class="dashboard-button">Saved Recipes</a>
+        <a href="/recipe/created/list" class="dashboard-button">Created Recipes</a>
+    </div>
+</div>
+</body>
+</html>
